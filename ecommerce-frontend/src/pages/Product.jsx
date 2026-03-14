@@ -12,7 +12,7 @@ function Product() {
   const handleLogout = () => {
     localStorage.clear();
     navigate("/");
-};
+  };
 
   useEffect(() => {
     getProducts()
@@ -21,10 +21,12 @@ function Product() {
   }, []);
 
   const handleAddToCart = (product) => {
+    const userId = Number(localStorage.getItem("userId"));
+    
     const cartItemRequest = {
       quantity: 1,
       product: { id: product.id },
-      cart: { user: { id: 1 } }
+      cart: { user: { id: userId } }
     };
 
     addToCart(cartItemRequest)

@@ -7,7 +7,7 @@ function Cart() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const userId = 1; 
+    const userId = localStorage.getItem("userId");
     getCartItems(userId)
       .then((res) => {
         console.log("Data received successfully");
