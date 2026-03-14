@@ -15,20 +15,16 @@ function Login() {
     setError("");
 
     try {
-      
-      const response = await axios.post("https://soulcart-backend.onrender.com/api/auth/login",  {
+      const response = await axios.post("https://soulcart-backend.onrender.com/api/auth/login", {
         email,
         password
       });
 
-      // 2. Save token and user info to localStorage
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("userId", response.data.userId);
       localStorage.setItem("userName", response.data.name);
 
       console.log("Login successful!", response.data);
-
-      // 3. Redirect to products page
       window.location.href = "/products";
 
     } catch (err) {
@@ -45,7 +41,6 @@ function Login() {
 
         <h2 className="text-center mb-4">Login to SoulCart</h2>
 
-        {/* Show error if login fails */}
         {error && (
           <div className="alert alert-danger">{error}</div>
         )}
@@ -82,6 +77,13 @@ function Login() {
           >
             {loading ? "Logging in..." : "Login"}
           </button>
+
+          <p className="text-center mt-3">
+            Don't have an account?{" "}
+            <a href="/register" style={{ color: "black", fontWeight: "bold" }}>
+              Register
+            </a>
+          </p>
 
         </form>
 
