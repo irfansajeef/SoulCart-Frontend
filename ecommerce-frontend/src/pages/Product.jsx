@@ -21,8 +21,16 @@ function Product() {
   }, []);
 
   const handleAddToCart = (product) => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      alert("Please login to add items to cart!");
+      navigate("/login");
+      return;
+    }
+
     const userId = Number(localStorage.getItem("userId"));
-    
+
     const cartItemRequest = {
       quantity: 1,
       product: { id: product.id },
