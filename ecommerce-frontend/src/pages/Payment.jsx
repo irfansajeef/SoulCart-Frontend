@@ -21,8 +21,8 @@ function Payment() {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/payments/pay",
+      const response = await 
+       axios.post("https://soulcart-backend.onrender.com/api/payments/pay", 
         {
           userId: Number(userId),
           amount: Number(totalAmount),

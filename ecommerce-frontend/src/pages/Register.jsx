@@ -21,8 +21,7 @@ function Register() {
     setError("");
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/auth/register", {
+      const response = await  axios.post("https://soulcart-backend.onrender.com/api/auth/register",  {
           name,
           email,
           password,

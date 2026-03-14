@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/products"; 
+const API_URL = "https://soulcart-backend.onrender.com/api/products";
 
 export const getProducts = () => {
     const token = localStorage.getItem("token"); 

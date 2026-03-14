@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080/api/cart"; // ← Fix 1: add /api
+const BASE_URL = "https://soulcart-backend.onrender.com/api/cart"; 
 
-// Get token helper
+
 const getAuthHeaders = () => ({
     headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}` // ← Fix 2: add token
+        Authorization: `Bearer ${localStorage.getItem("token")}` 
     }
 });
 
